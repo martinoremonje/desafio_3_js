@@ -18,10 +18,11 @@ btn.addEventListener("click",function(){
     mostrarUltimos()     
 })
 btn2.addEventListener("click",function(){
-    añadirYMostrar()        
+    añadirYMostrar();  
 })
 btn3.addEventListener("click",function(){
-    eliminarRadiologia()        
+    eliminarRadiologia();
+          
 })
 btn4.addEventListener("click",function(){
     mostrarDental() ;      
@@ -50,11 +51,13 @@ const mostrarUltimos = () =>{
 
 const añadirYMostrar = () =>{
     Traumatologia.push(...traumatologiaAñadir);
+    btn2.disabled = true;  
 };
 
 const eliminarRadiologia = () =>{
     Radiologia.shift();
     Radiologia.pop();
+    btn3.disabled = true; 
 };
 
 const mostrarDental = () =>{ 
