@@ -51,12 +51,14 @@ const mostrarUltimos = () =>{
 
 const añadirYMostrar = () =>{
     Traumatologia.push(...traumatologiaAñadir);
+    alert("Se añadieron correctamente los pacientes a Traumatologia")
     btn2.disabled = true;  
 };
 
 const eliminarRadiologia = () =>{
     Radiologia.shift();
     Radiologia.pop();
+    alert("Se elimino el primer y ultimo paciente de Radiologia, vuelva a Mostrar Pacientes")
     btn3.disabled = true; 
 };
 
