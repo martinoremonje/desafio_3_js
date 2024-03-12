@@ -64,6 +64,8 @@ const mostrarUltimos = () =>{
 const añadirYMostrar = () =>{
     Traumatologia.push(...traumatologiaAñadir);
     mostrarTablas();
+    listadoNombres();
+    fonasaTrauma();
     btn2.disabled = true;  
 };
 
@@ -71,6 +73,7 @@ const eliminarRadiologia = () =>{
     Radiologia.shift();
     Radiologia.pop();
     mostrarTablas();
+    listadoNombres();
     
     btn3.disabled = true; 
 };
