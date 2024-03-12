@@ -73,8 +73,7 @@ const eliminarRadiologia = () =>{
     Radiologia.shift();
     Radiologia.pop();
     mostrarTablas();
-    listadoNombres();
-    
+    listadoNombres();   
     btn3.disabled = true; 
 };
 
