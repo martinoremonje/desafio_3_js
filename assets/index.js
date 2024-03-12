@@ -3,11 +3,13 @@ let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
 let btn4 = document.getElementById("btn4");
 let btn5 = document.getElementById("btn5");
+let btn6 = document.getElementById("btn6");
+let btn7 = document.getElementById("btn7");
 let texto = document.getElementById("text1");
 let texto1 = document.getElementById("text2");
 let texto2 = document.getElementById("text3");
-let dentalDiv = document.getElementById("Dental")
-let fonasaOIsapre = document.getElementById("fonasaOIsapre")
+let dentalDiv = document.getElementById("Dental");
+let fonasaOIsapre = document.getElementById("fonasaOIsapre");
 
 
 btn.addEventListener("click",function(){
@@ -30,6 +32,12 @@ btn4.addEventListener("click",function(){
 })
 btn5.addEventListener("click",function(){
     listadoNombres() ;      
+})
+btn6.addEventListener("click",function(){
+    isapreDental() ;      
+})
+btn7.addEventListener("click",function(){
+    fonasaTrauma() ;      
 })
 
 const mostrarUltimos = () =>{
@@ -76,8 +84,30 @@ const listadoNombres = () =>{
     console.log(listadoNombre);
     listadoNombre.forEach(e=>{
         listadoText += `<strong>${e.paciente}</strong><br>`
-    })
+    });
     dentalDiv.innerHTML = listadoText;
+};
+
+const isapreDental = () =>{
+    let isapreText = "<h2 style='color: red'>Pacientes Dental Isapre</h2><br>";
+    Dental.forEach(e=>{
+        if(e.prevision == "ISAPRE")
+        isapreText += `<p>${e.hora}-${e.especialista}-${e.paciente}-${e.rut}-${e.prevision}</p>`;
+        
+    });
+    
+    fonasaOIsapre.innerHTML = isapreText
+};
+
+const fonasaTrauma = () =>{
+    let fonasaText = "<h2 style='color: red'>Pacientes Traumatologia Fonasa</h2><br>";
+    Traumatologia.forEach(e=>{
+        if(e.prevision == "FONASA")
+        fonasaText += `<p>${e.hora}-${e.especialista}-${e.paciente}-${e.rut}-${e.prevision}</p>`;
+        
+    });
+    
+    fonasaOIsapre.innerHTML = fonasaText
 };
 
 
