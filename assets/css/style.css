@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  font-family: "Sen";
+  overflow-y: scroll;
+  height: 100%;
+  padding-right: 17px; 
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+
+
 h1{
     font-size: 50px;
 }

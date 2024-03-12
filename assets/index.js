@@ -179,13 +179,13 @@ const Dental = [
        "rut": "17666419-0", 
        "prevision":"FONASA"}
        ,
-       {"hora": "15:30:00", 
+       {"hora": "16:30:00", 
        "especialista": "ANA MARIA GODOY",
         "paciente":"MANUEL GODOY",
          "rut": "17666419-0", 
          "prevision":"FONASA"}
        ,
-       {"hora": "14:00:00", 
+       {"hora": "17:00:00", 
        "especialista": "RAQUEL VILLASECA", 
        "paciente":"ANA SEPULVEDA", 
        "rut": "14441281-0",
