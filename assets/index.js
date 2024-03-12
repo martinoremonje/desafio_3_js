@@ -74,6 +74,7 @@ const eliminarRadiologia = () =>{
     Radiologia.pop();
     mostrarTablas();
     listadoNombres();   
+    fonasaTrauma();
     btn3.disabled = true; 
 };
 
