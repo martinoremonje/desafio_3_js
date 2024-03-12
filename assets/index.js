@@ -8,6 +8,9 @@ let btn7 = document.getElementById("btn7");
 let texto = document.getElementById("text1");
 let texto1 = document.getElementById("text2");
 let texto2 = document.getElementById("text3");
+let textoTable1 = document.getElementById("textTable1");
+let textoTable2 = document.getElementById("textTable2");
+let textoTable3 = document.getElementById("textTable3");
 let dentalDiv = document.getElementById("Dental");
 let fonasaOIsapre = document.getElementById("fonasaOIsapre");
 
@@ -60,12 +63,14 @@ const mostrarUltimos = () =>{
 
 const añadirYMostrar = () =>{
     Traumatologia.push(...traumatologiaAñadir);
+    mostrarTablas();
     btn2.disabled = true;  
 };
 
 const eliminarRadiologia = () =>{
     Radiologia.shift();
     Radiologia.pop();
+    mostrarTablas();
     
     btn3.disabled = true; 
 };
@@ -110,6 +115,41 @@ const fonasaTrauma = () =>{
     fonasaOIsapre.innerHTML = fonasaText
 };
 
+const mostrarTablas = () =>{
+    let textoTabla1 = "<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Prevision</th></tr>";
+    let textoTabla2 = "<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Prevision</th></tr>";
+    let textoTabla3 = "<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Prevision</th></tr>";
+    Radiologia.forEach(e=>{
+        textoTabla1 +=  `<tr>
+        <td>${e.hora}</td>
+        <td>${e.especialista}</td>
+        <td>${e.paciente}</td>
+        <td>${e.rut}</td>
+        <td>${e.prevision}</td>
+        </tr>`;
+       
+    }); textoTable1.innerHTML = textoTabla1;
+    Traumatologia.forEach(e=>{
+        textoTabla2 +=  `<tr>
+        <td>${e.hora}</td>
+        <td>${e.especialista}</td>
+        <td>${e.paciente}</td>
+        <td>${e.rut}</td>
+        <td>${e.prevision}</td>
+        </tr>`;
+       
+    }); textoTable2.innerHTML = textoTabla2;
+    Dental.forEach(e=>{
+        textoTabla3 +=  `<tr>
+        <td>${e.hora}</td>
+        <td>${e.especialista}</td>
+        <td>${e.paciente}</td>
+        <td>${e.rut}</td>
+        <td>${e.prevision}</td>
+        </tr>`;
+       
+    }); textoTable3.innerHTML = textoTabla3;
+}
 
 
 const Radiologia = [
@@ -187,12 +227,41 @@ const Traumatologia = [
         "prevision":"ISAPRE"}
 ];
 const Dental = [
-    { hora: "8:30:00", especialista: "ANDREA ZUÑIGA", paciente: "MARCELA RETAMAL", rut: "11123425-6", prevision: "ISAPRE"},
-    { hora: "11:00:00", especialista: "MARIA PIA ZAÑARTU", paciente: "ANGEL MUÑOZ", rut: "9878789-2", prevision: "ISAPRE"},
-    { hora: "11:30:00", especialista: "SCARLETT WITTING", paciente: "MARIO KAST", rut: "7998789-5", prevision: "FONASA"},
-    { hora: "13:00:00", especialista: "FRANCISCO VON TEUBER", paciente: "KARIN FERNANDEZ", rut: "18887662-K", prevision: "FONASA"},
-    { hora: "13:30:00", especialista: "EDUARDO VIÑUELA", paciente: "HUGO SANCHEZ", rut: "17665461-4", prevision: "FONASA"},
-    { hora: "14:00:00", especialista: "RAQUEL VILLASECA", paciente: "ANA SEPULVEDA", rut: "14441281-0", prevision: "ISAPRE"},
+    { hora: "8:30:00", 
+    especialista: "ANDREA ZUÑIGA", 
+    paciente: "MARCELA RETAMAL", 
+    rut: "11123425-6", 
+    prevision: "ISAPRE"},
+
+    { hora: "11:00:00", 
+    especialista: "MARIA PIA ZAÑARTU", 
+    paciente: "ANGEL MUÑOZ", 
+    rut: "9878789-2", 
+    prevision: "ISAPRE"}
+    ,
+    { hora: "11:30:00", 
+    especialista: "SCARLETT WITTING", 
+    paciente: "MARIO KAST", 
+    rut: "7998789-5", 
+    prevision: "FONASA"}
+    ,
+    { hora: "13:00:00", 
+    especialista: "FRANCISCO VON TEUBER", 
+    paciente: "KARIN FERNANDEZ", 
+    rut: "18887662-K", 
+    prevision: "FONASA"}
+    ,
+    { hora: "13:30:00", 
+    especialista: "EDUARDO VIÑUELA", 
+    paciente: "HUGO SANCHEZ", 
+    rut: "17665461-4", 
+    prevision: "FONASA"}
+    ,
+    { hora: "14:00:00", 
+    especialista: "RAQUEL VILLASECA", 
+    paciente: "ANA SEPULVEDA", 
+    rut: "14441281-0", 
+    prevision: "ISAPRE"},
   ];
 
 let traumatologiaAñadir = [{
@@ -232,4 +301,5 @@ let traumatologiaAñadir = [{
 },
 ]
 
+mostrarTablas();
 console.log(Radiologia, Traumatologia, Dental)
