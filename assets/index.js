@@ -7,8 +7,7 @@ let texto = document.getElementById("text1");
 let texto1 = document.getElementById("text2");
 let texto2 = document.getElementById("text3");
 let dentalDiv = document.getElementById("Dental")
-let listadoNombreText = document.getElementById("Listado")
-let h2 = document.querySelectorAll("h2")
+let fonasaOIsapre = document.getElementById("fonasaOIsapre")
 
 
 btn.addEventListener("click",function(){
@@ -78,7 +77,7 @@ const listadoNombres = () =>{
     listadoNombre.forEach(e=>{
         listadoText += `<strong>${e.paciente}</strong><br>`
     })
-    listadoNombreText.innerHTML = listadoText;
+    dentalDiv.innerHTML = listadoText;
 };
 
 
